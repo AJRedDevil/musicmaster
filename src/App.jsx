@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import './App.css';
 import Profile from './Profile';
+import Gallery from './Gallery';
 import { searchArtist, searchAlbum } from './spotifyService';
 
 class App extends Component {
@@ -12,16 +13,15 @@ class App extends Component {
     };
 
     search = () => {
-        // console.log('this.state', this.state);
         searchArtist(this.state.query)
         .then(json => {
             const artist = json.artists.items[0];
-            this.setState({artist});
 
             searchAlbum(artist.id)
             .then(json => {
                 const { tracks } = json;
                 this.setState({tracks});
+                this.setState({artist});
             });
         })
         .catch(error => console.log(error));
@@ -56,9 +56,9 @@ class App extends Component {
                             <Profile
                                 artist={this.state.artist}
                             />
-                            <div className="Gallery">
-                                Gallery
-                            </div>
+                            <Gallery
+                                tracks={this.state.tracks}
+                            />
                         </div>
                     :   <div></div>
                 }
