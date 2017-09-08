@@ -59,10 +59,6 @@ class App extends Component {
                 <Profile
                     artist={this.state.artist}
                 />
-                <div className="Profile">
-                    <div>Artist Pictures</div>
-                    <div>Artist Name</div>
-                </div>
                 <div className="Gallery">
                     Gallery
                 </div>
