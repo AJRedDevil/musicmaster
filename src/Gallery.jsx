@@ -1,12 +1,38 @@
 import React, { Component } from 'react'
 
 export default class Galler extends Component {
+    state = {
+        playingUrl: '',
+        audio: null,
+        playing: false
+    }
+    
     playAudio = (previewUrl) => {
-        if (previewUrl) {
-            let audio = new Audio(previewUrl);
-            console.log(previewUrl);
+        let audio = new Audio(previewUrl);
+        if (!this.state.playing){
             audio.play();
+            this.setState({
+                playing: true,
+                playingUrl: previewUrl,
+                audio
+            })
+        } else {
+            if (this.state.playingUrl === previewUrl) {
+                this.state.audio.pause();
+                this.setState({
+                    playing: false
+                });
+            } else {
+                this.state.audio.pause();
+                audio.play();
+                this.setState({
+                    playing: true,
+                    playingUrl: previewUrl,
+                    audio
+                });
+            }
         }
+
     }
     
     render() {
