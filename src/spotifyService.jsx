@@ -1,5 +1,5 @@
 const BASE_URL = 'https://api.spotify.com/v1/';
-const access_token = 'BQB-SfCw5cfPfgNvA2feVGSFWvp-JJZ0pePltDJ64PsmNy8E6mVblGHlU_0qOkeJJCvHrM6qP_7uRxA_t0N6r1pEK-sYW7jeBDuxYO3fKE_HesZf5SXSps4lTEgDvolXqIK1IHgaokneH4StS-iFYnQPxtVeGIg&refresh_token=AQAXeBH08gr0p6LlZkudh0M7EpVklGPU8bfGh7rYEh_2-xhJHGsQCXV5g8PGXjEDDpklA0VMiq66xinrNwrjAAbl0CxkBSXbOmusFKNl8lx84ozcjauHdygbzO2Pem8BYKw';
+const access_token = 'BQC1Rnc9velt9lN7Vs_HaUdPe79Oiw9npj_tm7p1nj_H-oa-Zmp5GRlazZofrDmAK73ZexJiFk1AGmza6l6_3VIJyzwa2bWV6pMhB60yZMtHhxpaN8Ta72DvvuQ-DgrBrKJzFlZ8ak9So9iaDMG0DaKrSI0v5iU';
 
 var my_options = {
     method: 'GET',

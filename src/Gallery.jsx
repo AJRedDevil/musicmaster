@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 
 export default class Galler extends Component {
+    playAudio = (previewUrl) => {
+        if (previewUrl) {
+            let audio = new Audio(previewUrl);
+            console.log(previewUrl);
+            audio.play();
+        }
+    }
+    
     render() {
-        console.log('gallery.props', this.props);
         const { tracks } = this.props;
         return (
             <div>
@@ -18,6 +25,7 @@ export default class Galler extends Component {
                                     src={trackImg}
                                     alt="track"
                                     className="track-img"
+                                    onClick={() => this.playAudio(track.preview_url)}
                                 />
                                 <p className="track-text">
                                     {track.name}
